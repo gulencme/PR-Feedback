@@ -15,7 +15,7 @@
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** INT ve QA ortamları aşağıdaki gibi eklendi.
+- **Açıklama:** Yeni domainlerin iletilmesi Ömer abi tarafında bekliyor.
 
 - **Önerilen Güncel Hâli:**
 
