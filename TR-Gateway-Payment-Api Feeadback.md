@@ -147,9 +147,7 @@ Tung Beier:
   why not write this out like the other values as well?
 
   Suggested change:
-  - SDD_EXPRESS
-  - SAME_DAY_DELIVERY_EXPRESS
-  - SAME_DAY_PICKUP
+  - SDD_EXPRESS --> SAME_DAY_DELIVERY_EXPRESS
 
 pfaefflin-mms:
   This value is already defined this way in XPAY and other systems
