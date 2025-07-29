@@ -150,8 +150,11 @@ Tung Beier:
   - SDD_EXPRESS
   - SAME_DAY_DELIVERY_EXPRESS
   - SAME_DAY_PICKUP
+
+pfaefflin-mms:
+  This value is already defined this way in XPAY and other systems
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması önerisi değerlendirilecek.
+- **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması önerisi sorulacak.
