@@ -71,9 +71,9 @@ Tung Beier:
   and other price properties as well?
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Unit price ve diğer fiyat alanlarının money object olarak tanımlanması konusunda karar bekleniyor.
+- **Açıklama:** Unit price ve diğer fiyat alanlarının money object olarak tanımlandı.
 
 ---
 
@@ -89,7 +89,7 @@ Tung Beier:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Model isimlerindeki "Model" suffix'inin kaldırılması konusunda karar bekleniyor.
+- **Açıklama:** Model isimlerindeki "Model" suffix'inin kaldırılması konusunda tartışılıp, karar verilecek.
 
 ---
 
@@ -117,9 +117,9 @@ Tung Beier:
   shouldn't postal_code be required as well?
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Postal code alanının zorunlu olup olmadığına dair karar bekleniyor.
+- **Açıklama:** Postal code alanı zorunlu hale getirildi.
 
 ---
 
@@ -130,11 +130,12 @@ Tung Beier:
 ```
 Tung Beier:
   what type is this data? an object, a string, a number?
+  
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Error modelindeki data alanının tipinin belirlenmesi bekleniyor.
+- **Açıklama:** Error modelindeki data alanını generic object'den belli bir obje olarak dönüştürülecek.
 
 ---
 
@@ -155,4 +156,52 @@ pfaefflin-mms:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması önerisi sorulacak.
+- **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması Thomas Pfaefflin'a soruldu. Cevap bekleniyor.
+
+#### 🔹 **Req10: Detaylı Proje Açıklaması**
+
+- **Yorum:**
+
+```
+Tung Beier:
+  EN: please provide a description with more substance. This doesn't help anyone to understand what this spec is used for.
+  TR: Lütfen daha kapsamlı bir açıklama sağlayın. Bu açıklama kimsenin bu spesifikasyonun ne için kullanıldığını anlamasına yardımcı olmuyor.
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer Örkmez'den daha detaylı açıklama alınacak.
+
+#### 🔹 **Req11: Versiyonlamanın server url levelinde yazılması**
+
+- **Yorum:**
+
+```
+Florian Heubeck:
+  EN: isn't it api-gateway/v1/api-name/your-resources usually? so v1 to be part of the server url. (same for all other paths)
+  TR: Genellikle api-gateway/v1/api-name/your-resources şeklinde olmaz mı? Yani v1'in server URL'inin bir parçası olması gerekir. (Diğer tüm path'ler için de aynı şekilde)
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** İncelendi. Çözümü için endpoint bazlı versiyonlama özelliği kaldırılmış olacak. Ömer Örkmez'den son yorum alınacak.
+
+#### 🔹 **Req12: Detaylı Proje Açıklaması**
+
+- ** Örnek Kod""
+```
+product_id:
+  type: string
+  description: ID of the product
+```
+
+- **Yorum:**
+```
+Florian Heubeck:
+  EN: MDNG id? global product id?
+  TR: "MDNG id? global ürün id'si?"
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer Örkmez'e sorulacak.
