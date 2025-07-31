@@ -7,8 +7,8 @@
 | **Durum** | **Sayı** |
 |-----------|----------|
 | ✅ **Çözüldü** | 20 |
-| ⏳ **Bekliyor** | 4 |
-| **📝 Toplam** | **24** |
+| ⏳ **Bekliyor** | 5 |
+| **📝 Toplam** | **25** |
 
 ---
 
@@ -33,13 +33,13 @@
 - Req22: Sadece Belirtilen Alanların Kullanımı (Refund Modeli)
 - Req23: FifaToken türü yanlış tanımlanmış
 
-### Bekleyen Konular (4):
+### Bekleyen Konular (5):
 - Req1: Ortam Sunucularının Eklenmesi
 - Req3: Açıklamaların Zenginleştirilmesi
 - Req19: PaymentListResponse içinde httpStatus gereksiz olabilir mi?
 - Req20: HTTP status code tekrarının anlamlılığı
 - Req24: İkinci API Gerekliliği
-
+- Req25: bank_id tipinin string'e dönüştürülme talebi
 ---
 
 #### 🔹 **Req1: Ortam Sunucularının Eklenmesi**
@@ -529,17 +529,17 @@ PaymentListResponse:
   Is it really that difficult to change? the code is a duplicate and instead of returning PaymentListResponse you return PaymentListData, anyway if it causes too much problems changing it now, keep it.
 (16.07.2025 - 14:35) Mehmet Gülenç:
   For now, we’d prefer to keep it as it is
-(30.07.2025 - 09:23) Florian Heubeck:
-  please name it differently then and describe it properly
+(30.07.2025 - 09:22) Florian Heubeck:
+  changes most likely would introduce breaking changes. please comply to the api guide and introduce proper error response right from the beginning.
   ```
 
 - **Durum:** **Bekliyor**
 
 - **Açıklama:**
 (16.07.2025 - 14:35)
-- `httpStatus` ve `data` modelinin ayrıştırılması ileride tekrar değerlendirilecek. Şu anda iş akışını engellemediği için mevcut yapı korunuyor.
+  - `httpStatus` ve `data` modelinin ayrıştırılması ileride tekrar değerlendirilecek. Şu anda iş akışını engellemediği için mevcut yapı korunuyor.
 (30.07.2025 - 09:23)
-- Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
+  - Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
 
 ---
 
@@ -560,9 +560,9 @@ PaymentListResponse:
 
 - **Açıklama:**
 (15.07.2025 - 01:31)
-- Şu an yalnızca HTTP status dönüyor; ileride iş seviyesinde hata kodlarının da buraya eklenmesi planlanabilir.
+  - Şu an yalnızca HTTP status dönüyor; ileride iş seviyesinde hata kodlarının da buraya eklenmesi planlanabilir.
 (30.07.2025 - 09:23)
-- Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
+  - Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
 
 ---
 
@@ -661,3 +661,20 @@ and not type: apiKey
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Reporting endpoint'lerinin ayrı bir API olarak mı yoksa mevcut API spec'e eklenmiş olarak mı tutulacağına dair Ömer abi'den karar bekleniyor.
+
+---
+
+#### 🔹 **Req25: bank_id tipinin string'e dönüştürülme talebi**
+- **PR Link:** https://github.com/MediaMarktSaturn/oas/pull/1666#discussion_r2241639153
+
+- **Yorum:**
+```
+(30.07.2025 - 09:19) Florian Heubeck:
+  string
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+---
