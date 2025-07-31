@@ -1,4 +1,4 @@
-## Pull Request Feedback Summary
+## Gateway Payment Api Project Pull Request Feedback Summary
 
 ## 📊 Durum Özeti
 
@@ -32,8 +32,6 @@
 - Req18: SellerType Enum Değişikliği
   
 ---
-
-### XPAY
 
 #### 🔹 **Req1: X-Api-Key Zorunluluğu**
 
