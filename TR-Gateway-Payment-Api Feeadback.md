@@ -22,7 +22,7 @@ pfaefflin-mms:
 
 #### 🔹 **Req2: LineItemId Format Değişikliği**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 BasketItem:
   required:
@@ -66,7 +66,7 @@ Bu alan sepet içindeki öğelerin sıralı satır numarasını temsil ediyor (1
 
 #### 🔹 **Req3: Quantity Minimum Değeri**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 quantity:
   minimum: 0
@@ -100,7 +100,7 @@ quantity:
 
 #### 🔹 **Req4: Unit Price Money Object Kullanımı**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 unit_price:
   minimum: 0
@@ -127,7 +127,7 @@ unit_price:
 
 #### 🔹 **Req5: CreateRefundRequestModel'de Model Suffix'inin Kaldırılması**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 CreateRefundRequestModel:
       required:
@@ -158,7 +158,7 @@ CreateRefundRequestModel:
 
 #### 🔹 **Req6: Customer ID Sistem Açıklaması**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 CustomerInfo:
   required:
@@ -206,7 +206,7 @@ CustomerInfo:
 
 #### 🔹 **Req7: Postal Code Zorunluluğu**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 DeliveryAddress:
   required:
@@ -231,7 +231,7 @@ DeliveryAddress:
 
 #### 🔹 **Req8: Error Data Type Belirlenmesi**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 ErrorDetailModel:
     required:
@@ -314,7 +314,7 @@ ErrorDetailModel:
 
 #### 🔹 **Req11: Versiyonlamanın server url levelinde yazılması**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 paths:
   /v1/refunds:
@@ -342,7 +342,7 @@ paths:
 
 #### 🔹 **Req12: BasketItems altında bulunan product_id açıklaması talebi ?**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 product_id:
   type: string
@@ -364,7 +364,7 @@ product_id:
 
 #### 🔹 **Req13: BasketItems altında bulunan product_group_id tip değişikliği talebi**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 product_group_id:
   minimum: 0
@@ -390,7 +390,7 @@ product_group_id:
 
 #### 🔹 **Req14: CreateRefundRequestModel altında bulunan payment_id parametresi identifier olarak değiştirilmeli**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 payment_id:
   type: integer
@@ -413,7 +413,7 @@ payment_id:
 
 #### 🔹 **Req15: Yabancı para birimi olacak mı ?**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 Currency:
   pattern: ^[A-Z]{3}$
@@ -439,7 +439,7 @@ Currency:
 
 #### 🔹 **Req16: BasketItems içinde bulunan ItemType adlandırma değişikliği talebi**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 ItemType:
   type: string
@@ -465,7 +465,7 @@ ItemType:
 
 #### 🔹 **Req17: RefundResultModel altında status enum olmalı**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 RefundResultModel:
   required:
@@ -493,7 +493,7 @@ RefundResultModel:
 
 #### 🔹 **Req18: SellerType enum verisi değişikliği**
 
-- ** Yorum yapılan kod**
+- **Yorum yapılan kod:**
 ```
 SellerType:
   type: string
