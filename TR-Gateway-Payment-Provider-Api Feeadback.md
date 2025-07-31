@@ -1,5 +1,7 @@
 ## Provider Project Pull Request Feedback Summary
 
+**📅 Son Güncelleme:** 31 Temmuz 2025 - 14:52
+
 ## 📊 Durum Özeti
 
 | **Durum** | **Sayı** |
