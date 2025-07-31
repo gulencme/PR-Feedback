@@ -69,7 +69,7 @@
 
 #### 🔹 **Req2: Kullanılmayan Parametrelerin Kaldırılması**
 
-- **Yorum:**
+- **Yorum1:**
 ```
 (14.07.2025 - 16:47) gallus-mms:
   DMC requests only with the following parameters: payment_status, min_created_date, max_created_date, page and size. All others are not used on our side and can be removed if not required by someone else
