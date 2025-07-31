@@ -35,14 +35,35 @@
 
 #### 🔹 **Req1: X-Api-Key Zorunluluğu**
 
+```
+parameters:
+  - name: Accept-Language
+    in: header
+    schema:
+      type: string
+  - name: X-Flow-Id
+    in: header
+    required: true
+    schema:
+      type: string
+  - name: X-Api-Key
+    in: header
+    schema:
+      type: string
+```
+
 - **Yorum:**
 
 ```
-Tung Beier:
+(28.07.2025 - 16:13) Tung Beier:
   there's no need to specify this as it is only used by Kong to route the requests to the corresponding backend
 
-pfaefflin-mms:
+(28.07.2025 - 19:14) pfaefflin-mms:
   It will be routed via Kong, see url comment.
+
+(29.07.2025 - 16:02) Tung Beier:
+  what I mean is that it can be ommitted in the spec, because a lot of specs are doing it.
+  but of course we can have it in here for clarity.
 ```
 
 - **Durum:** **Çözüldü**
@@ -358,7 +379,7 @@ paths:
   EN: isn't it api-gateway/v1/api-name/your-resources usually? so v1 to be part of the server url. (same for all other paths)
   TR: Genellikle api-gateway/v1/api-name/your-resources şeklinde olmaz mı? Yani v1'in server URL'inin bir parçası olması gerekir. (Diğer tüm path'ler için de aynı şekilde)
 
-İstenen çözüm:
+Suggested change:
   paths:
     /refunds:
 ```
