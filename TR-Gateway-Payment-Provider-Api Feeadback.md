@@ -536,10 +536,8 @@ PaymentListResponse:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:**
-(16.07.2025 - 14:35)
-  - `httpStatus` ve `data` modelinin ayrıştırılması ileride tekrar değerlendirilecek. Şu anda iş akışını engellemediği için mevcut yapı korunuyor.
-(30.07.2025 - 09:23)
-  - Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
+  - (16.07.2025 - 14:35) `httpStatus` ve `data` modelinin ayrıştırılması ileride tekrar değerlendirilecek. Şu anda iş akışını engellemediği için mevcut yapı korunuyor.
+  - (30.07.2025 - 09:23) Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
 
 ---
 
@@ -559,11 +557,9 @@ PaymentListResponse:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:**
-(15.07.2025 - 01:31)
-  - Şu an yalnızca HTTP status dönüyor; ileride iş seviyesinde hata kodlarının da buraya eklenmesi planlanabilir.
-(30.07.2025 - 09:23)
-  - Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
-
+  - (15.07.2025 - 01:31) Şu an yalnızca HTTP status dönüyor; ileride iş seviyesinde hata kodlarının da buraya eklenmesi planlanabilir.
+  - (30.07.2025 - 09:23) Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
+  - 
 ---
 
 #### 🔹 **Req21: PaymentProvider yalnızca ZIP mi olacak?**
