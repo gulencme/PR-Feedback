@@ -38,6 +38,8 @@
 - Req20: HTTP status code tekrarının anlamlılığı
 - Req24: İkinci API Gerekliliği
 
+---
+
 #### 🔹 **Req1: Ortam Sunucularının Eklenmesi**
 
 - **Yorum yapılan kod:**
