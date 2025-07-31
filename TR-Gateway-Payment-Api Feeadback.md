@@ -1,6 +1,6 @@
 ## Gateway Payment Api Project Pull Request Feedback Summary
 
-**📅 Son Güncelleme:** 31 Temmuz 2025 - 12:25
+**📅 Son Güncelleme:** 31 Temmuz 2025 - 15:35
 
 ## 📊 Durum Özeti
 
@@ -320,11 +320,20 @@ ErrorDetailModel:
       application/problem+json:
         schema:
           $ref: '#/components/schemas/ErrorResponseModel'
+(31.07.2025 - 15:27) Tung Beier:
+  I mean the type is missing
+  data:
+  + type: ...
+    description: Error detail data
+    nullable: true
+(31.07.2025 - 15:33) Mehmet Gülenç
+  This is a generic field - if I set the data type to object, will you expect a specific $ref?
+The data field should remain generic to maintain flexibility for different error contexts while providing proper type definition.
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Error modelindeki data alanını generic object'den belli bir obje olarak dönüştürülecek. Yapı değişikliği olduğundan kaynaklı biraz uzun sürebilir.
+- **Açıklama:** Tung Beier ile olan konuşma devam etmekte. İstek net olduğunda düzenlenecektir.
 
 ---
 
