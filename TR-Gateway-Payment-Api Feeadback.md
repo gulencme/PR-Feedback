@@ -40,12 +40,22 @@ BasketItem:
 - **Yorum:**
 
 ```
+EN:
 (28.07.2025 - 16:20) Tung Beier:
   maybe consider using int32 instead. int64 is quite big in my opinion for items in a basket.
 (30.07.2025 - 09:03) Florian Heubeck:
   and if it's some kind of technical identifier, please use string
-(30.07.2025 - 12:20) gulencme:
+(30.07.2025 - 12:20) Mehmet Gülenç:
   This field represents the sequential line number of items within the basket (1, 2, 3...) and must be unique per basket. Using int32 is appropriate since this is not an identifier, but simply a sequential number. I'll update the description to make it clearer.
+```
+```
+TR:
+(28.07.2025 - 16:20) Tung Beier:
+belki int32 kullanmayı düşünebilirsin. int64 sepetteki öğeler için bence oldukça büyük.
+(30.07.2025 - 09:03) Florian Heubeck:
+ve eğer bu bir tür teknik tanımlayıcı ise, lütfen string kullan
+(30.07.2025 - 12:20) Mehmet Gülenç:
+Bu alan sepet içindeki öğelerin sıralı satır numarasını temsil ediyor (1, 2, 3...) ve sepet başına benzersiz olmalı. Bu bir tanımlayıcı değil, sadece sıralı bir numara olduğu için int32 kullanmak uygun. Açıklamayı daha net hale getirmek için güncelleyeceğim.
 ```
 
 - **Durum:** **Çözüldü**
@@ -132,7 +142,7 @@ CreateRefundRequestModel:
   in my opinion (and this is purely my opinion and not some guideline), there's no need to use a suffix in this case, ModelL, because it doesn't add any useful meaning to the object. And any openapi generators that I know offer an option to add a pre- and/or suffix of your choice to the generated models if you really want to have them in your code.
   Also this adds inconsistency to all the components in this spec as well, because the suffix is not use in all components.
 
-(29.07.2025 - 15:52) gulencme:
+(29.07.2025 - 15:52) Mehmet Gülenç:
   At the code level, we use suffixes in all our components for differentiation purposes as an architectural approach. We prefer to keep it this way if it won't affect the current structure, as it would require extensive changes
 
 (29.07.2025 - 15:54) Florian Heubeck:
