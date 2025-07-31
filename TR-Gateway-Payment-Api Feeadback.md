@@ -1,5 +1,38 @@
 ## Pull Request Feedback Summary
 
+## 📊 Durum Özeti
+
+| **Durum** | **Sayı** |
+|-----------|----------|
+| ✅ **Çözüldü** | 5 |
+| ⏳ **Bekliyor** | 13 |
+| **📝 Toplam** | **18** |
+
+---
+
+### Çözülen Konular (5):
+- Req1: X-Api-Key Zorunluluğu
+- Req2: LineItemId Format Değişikliği  
+- Req3: Quantity Minimum Değeri
+- Req4: Unit Price Money Object Kullanımı
+- Req17: RefundResultModel altında status enum
+
+### Bekleyen Konular (13):
+- Req5: Model Suffix Kaldırılması
+- Req6: Customer ID Sistem Açıklaması
+- Req8: Error Data Type Belirlenmesi
+- Req9: FulfillmentMethod Enum Değerleri
+- Req10: Detaylı Proje Açıklaması
+- Req11: Versiyonlama Server URL'de
+- Req12: Product ID Açıklaması
+- Req13: Product Group ID Tip Değişikliği
+- Req14: Payment ID String Yapılması
+- Req15: Yabancı Para Birimi
+- Req16: ItemType Adlandırma Değişikliği
+- Req18: SellerType Enum Değişikliği
+  
+---
+
 ### XPAY
 
 #### 🔹 **Req1: X-Api-Key Zorunluluğu**
