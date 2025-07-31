@@ -362,7 +362,33 @@ product_id:
 
 ---
 
-#### 🔹 **Req13: CreateRefundRequestModel altında bulunan payment_id parametresi identifier olarak değiştirilmeli**
+#### 🔹 **Req13: BasketItems altında bulunan product_group_id tip değişikliği talebi**
+
+- ** Yorum yapılan kod**
+```
+product_group_id:
+  minimum: 0
+  exclusiveMinimum: true
+  type: integer
+  description: Product category or group ID
+  format: int32
+  nullable: true
+```
+
+- **Yorum:**
+```
+(30.07.2025 - 09:04) Florian Heubeck:
+  EN: product group id is an identifier, please use string
+  TR: ürün grubu kimliği bir tanımlayıcıdır, lütfen dize kullanın
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+---
+
+#### 🔹 **Req14: CreateRefundRequestModel altında bulunan payment_id parametresi identifier olarak değiştirilmeli**
 
 - ** Yorum yapılan kod**
 ```
@@ -385,7 +411,7 @@ payment_id:
 
 ---
 
-#### 🔹 **Req14: Yabancı para birimi olacak mı ?**
+#### 🔹 **Req15: Yabancı para birimi olacak mı ?**
 
 - ** Yorum yapılan kod**
 ```
@@ -411,7 +437,7 @@ Currency:
 
 ---
 
-#### 🔹 **Req15: BasketItems içinde bulunan ItemType adlandırma değişikliği talebi**
+#### 🔹 **Req16: BasketItems içinde bulunan ItemType adlandırma değişikliği talebi**
 
 - ** Yorum yapılan kod**
 ```
@@ -437,7 +463,7 @@ ItemType:
 
 ---
 
-#### 🔹 **Req16: RefundResultModel altında status enum olmalı**
+#### 🔹 **Req17: RefundResultModel altında status enum olmalı**
 
 - ** Yorum yapılan kod**
 ```
@@ -465,7 +491,7 @@ RefundResultModel:
 
 ---
 
-#### 🔹 **Req17: SellerType enum verisi değişikliği**
+#### 🔹 **Req18: SellerType enum verisi değişikliği**
 
 - ** Yorum yapılan kod**
 ```
