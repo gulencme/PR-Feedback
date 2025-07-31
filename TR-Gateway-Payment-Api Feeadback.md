@@ -99,7 +99,11 @@ Tung Beier:
 
 ```
 Tung Beier:
-  customer's id in which system?
+  EN: customer's id in which system?
+  TR: Müşterinin kimliği hangi sistemde?
+Florian Heubeck 
+  EN: if's that what I think it should be, please call it party_id for clarity.
+  TR: eğer düşündüğüm buysa, açıklık sağlamak için lütfen buna party_id diyelim.
 ```
 
 - **Durum:** **Bekliyor**
@@ -157,6 +161,7 @@ pfaefflin-mms:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması Thomas Pfaefflin'a soruldu. Cevap bekleniyor.
+- Cevap olarak : SDD_EXPRESS kaldırılması ve sadece SAME_DAY_DELIVERY şeklinde devam edilmesi istendi.
 
 #### 🔹 **Req10: Detaylı Proje Açıklaması**
 
@@ -170,7 +175,7 @@ Tung Beier:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Ömer Örkmez'den daha detaylı açıklama alınacak.
+- **Açıklama:** Ömer abi'den daha detaylı açıklama alınacak.
 
 #### 🔹 **Req11: Versiyonlamanın server url levelinde yazılması**
 
@@ -184,9 +189,9 @@ Florian Heubeck:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** İncelendi. Çözümü için endpoint bazlı versiyonlama özelliği kaldırılmış olacak. Ömer Örkmez'den son yorum alınacak.
+- **Açıklama:** İncelendi. Çözümü için endpoint bazlı versiyonlama özelliği kaldırılmış olacak. Ömer abi'den son yorum alınacak.
 
-#### 🔹 **Req12: Detaylı Proje Açıklaması**
+#### 🔹 **Req12: BasketItems altında bulunan ProductId nedir ?**
 
 - ** Örnek Kod""
 ```
@@ -204,4 +209,74 @@ Florian Heubeck:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Ömer Örkmez'e sorulacak.
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+#### 🔹 **Req13: CreateRefundRequestModel altında bulunan payment_id parametresi identifier olarak değiştirilmeli**
+
+- ** Örnek Kod""
+```
+payment_id:
+  type: integer
+  description: Payment ID for refunding order fully or partially
+  format: int64
+  nullable: true
+```
+
+- **Yorum:**
+```
+Florian Heubeck:
+  https://github.com/MediaMarktSaturn/oas/tree/master/api-design-guide#oas-09-business-object-identifiers
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+#### 🔹 **Req14: Yabancı para birimi olacak mı ?**
+
+- **Yorum:**
+```
+Florian Heubeck:
+  no foreign currency payments?
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+#### 🔹 **Req15: BasketItems içinde bulunan ItemType adlandırma değişikliği talebi**
+
+- **Yorum:**
+```
+Florian Heubeck:
+  EN: who's deciding for those? would prefer to have kind_of_product.
+  TR: Bunlara kim karar veriyor? kind_of_product olmasını tercih ederdim.
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+#### 🔹 **Req16: RefundResultModel altında status enum olmalı**
+
+- **Yorum:**
+```
+Florian Heubeck:
+  enumeration?
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
+
+#### 🔹 **Req17: SellerType enum verisi değişikliği**
+
+- **Yorum:**
+```
+Florian Heubeck:
+  MIX_BASKET -> MIXED_BASKET
+```
+
+- **Durum:** **Bekliyor**
+
+- **Açıklama:** Ömer abi'ye sorulacak.
