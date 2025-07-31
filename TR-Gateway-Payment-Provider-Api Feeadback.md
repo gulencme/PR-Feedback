@@ -90,7 +90,7 @@
   add property payment_id and payment_transaction_id (because you can query that one also)
 ```
 - **Durum:** **Çözüldü**
-- 
+
 - **Açıklama:** Yalnızca aşağıdaki parametreler bırakıldı:
   - `payment_id`
   - `payment_transaction_id`
