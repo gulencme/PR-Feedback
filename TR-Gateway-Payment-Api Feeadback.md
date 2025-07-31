@@ -284,6 +284,8 @@ ErrorDetailModel:
 - **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması Thomas Pfaefflin'a soruldu. Cevap bekleniyor.
 - **Cevap olarak:** SDD_EXPRESS kaldırılması ve sadece SAME_DAY_DELIVERY şeklinde devam edilmesi istendi.
 
+---
+
 #### 🔹 **Req10: Detaylı Proje Açıklaması**
 
 - **Yorum:**
@@ -297,6 +299,8 @@ ErrorDetailModel:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Ömer abi'den daha detaylı açıklama alınacak.
+
+---
 
 #### 🔹 **Req11: Versiyonlamanın server url levelinde yazılması**
 
@@ -324,6 +328,8 @@ paths:
 
 - **Açıklama:** İncelendi. Ömer abi'den son yorum alınacak.
 
+---
+
 #### 🔹 **Req12: BasketItems altında bulunan product_id açıklaması talebi ?**
 
 - ** Yorum yapılan kod**
@@ -343,6 +349,8 @@ product_id:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Ömer abi'ye sorulacak.
+
+---
 
 #### 🔹 **Req13: CreateRefundRequestModel altında bulunan payment_id parametresi identifier olarak değiştirilmeli**
 
@@ -364,6 +372,8 @@ payment_id:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Gerekliliği Ömer abi'ye sorulacak.
+
+---
 
 #### 🔹 **Req14: Yabancı para birimi olacak mı ?**
 
@@ -389,6 +399,8 @@ Currency:
 
 - **Açıklama:** Hayır şimdilik olmayacak ama uzun vadede olup olmayacağı Ömer abi'ye sorulacak.
 
+---
+
 #### 🔹 **Req15: BasketItems içinde bulunan ItemType adlandırma değişikliği talebi**
 
 - ** Yorum yapılan kod**
@@ -412,6 +424,8 @@ ItemType:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Ömer abi'ye sorulacak.
+
+---
 
 #### 🔹 **Req16: RefundResultModel altında status enum olmalı**
 
@@ -439,6 +453,8 @@ RefundResultModel:
 
 - **Açıklama:** Enum'a çevrildi
 
+---
+
 #### 🔹 **Req17: SellerType enum verisi değişikliği**
 
 - ** Yorum yapılan kod**
@@ -460,3 +476,5 @@ SellerType:
 - **Durum:** **Bekliyor**
 
 - **Açıklama:** Ömer abi'ye sorulacak.
+
+---
