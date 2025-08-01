@@ -1,18 +1,18 @@
 ## Gateway Payment Api Project Pull Request Feedback Summary
 
-**📅 Son Güncelleme:** 01 Ağustos 2025 - 09:48
+**📅 Son Güncelleme:** 01 Ağustos 2025 - 11:48
 
 ## 📊 Durum Özeti
 
 | **Durum** | **Sayı** |
 |-----------|----------|
-| ✅ **Çözüldü** | 11 |
-| ⏳ **Bekliyor** | 7 |
+| ✅ **Çözüldü** | 10 |
+| ⏳ **Bekliyor** | 8 |
 | **📝 Toplam** | **18** |
 
 ---
 
-### Çözülen Konular (11):
+### Çözülen Konular (10):
 - Req1: X-Api-Key Zorunluluğu
 - Req2: LineItemId Format Değişikliği  
 - Req3: Quantity Minimum Değeri
@@ -21,17 +21,17 @@
 - Req7: Postal Code Zorunluluğu
 - Req9: FulfillmentMethod Enum Değerleri
 - Req12: Product ID Açıklaması
-- Req14: Payment ID String Yapılması
 - Req15: Yabancı Para Birimi
 - Req17: RefundResultModel altında status enum
 - Req18: SellerType Enum Değişikliği
 
-### Bekleyen Konular (7):
+### Bekleyen Konular (8):
 - Req5: Model Suffix Kaldırılması
 - Req8: Error Data Type Belirlenmesi
 - Req10: Detaylı Proje Açıklaması
 - Req11: Versiyonlama Server URL'de
 - Req13: Product Group ID Tip Değişikliği
+- Req14: Payment ID String Yapılması
 - Req16: ItemType Adlandırma Değişikliği
   
 ---
@@ -497,13 +497,17 @@ payment_id:
 (01.08.2025 - 08:29) Mehmet Gülenç:
   EN: We don't generate this value. Since the integrator's own value is of type int, we need to maintain the "payment_id" parameter as int type on our side as well to ensure consistency
   TR: Bu değeri biz oluşturmuyoruz. Entegratörün kendi değeri int tipinde olduğundan dolayı, tutarlılığı sağlamak için "payment_id" parametresinin tipini bizim tarafımızda da int olarak tutmamız gerekmektedir.
+(30.07.2025 - 10:00) Florian Heubeck:
+  EN: that doesn't necessary stay this way. so even more important for identifiers out of your control, this rule of the guide is valid.
+  TR: bunun bu şekilde kalması gerekmiyor. bu yüzden kontrolünüz dışındaki tanımlayıcılar için daha da önemli, kılavuzun bu kuralı geçerli.
 ```
 
-- **Durum:** **Çözüldü**
+- **Durum:** **Bekliyor**
 
 - **Açıklama:**
   - (30.07.2025) Gerekliliği Ömer abi'ye sorulacak.
-  - (01.08.2025) Soruldu ve yorum yapıldı.
+  - (01.08.2025 - 08:30) Soruldu ve yorum yapıldı.
+  - (01.08.2025 - 10:54) Tekrardan açıldı, Ömer abiye iletildi, yorumu bekleniyor.
 
 ---
 
