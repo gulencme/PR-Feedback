@@ -1,18 +1,18 @@
 ## Provider Project Pull Request Feedback Summary
 
-**📅 Son Güncelleme:** 31 Temmuz 2025 - 14:52
+**📅 Son Güncelleme:** 01 Ağustos 2025 - 10:44
 
 ## 📊 Durum Özeti
 
 | **Durum** | **Sayı** |
 |-----------|----------|
-| ✅ **Çözüldü** | 20 |
-| ⏳ **Bekliyor** | 5 |
-| **📝 Toplam** | **25** |
+| ✅ **Çözüldü** | 22 |
+| ⏳ **Bekliyor** | 3 |
+| **📝 Toplam** | **26** |
 
 ---
 
-### Çözülen Konular (20):
+### Çözülen Konular (22):
 - Req2: Kullanılmayan Parametrelerin Kaldırılması
 - Req4: Gereksiz Description Tekrarlarının Kaldırılması
 - Req5: Kod Biçimlendirme ve Gereksiz allOf Kullanımı
@@ -32,14 +32,14 @@
 - Req21: PaymentProvider yalnızca ZIP mi olacak?
 - Req22: Sadece Belirtilen Alanların Kullanımı (Refund Modeli)
 - Req23: FifaToken türü yanlış tanımlanmış
+- Req24: İkinci API Gerekliliği
+- Req25: bank_id tipinin string'e dönüştürülme talebi
 
-### Bekleyen Konular (5):
+### Bekleyen Konular (4):
 - Req1: Ortam Sunucularının Eklenmesi
 - Req3: Açıklamaların Zenginleştirilmesi
 - Req19: PaymentListResponse içinde httpStatus gereksiz olabilir mi?
 - Req20: HTTP status code tekrarının anlamlılığı
-- Req24: İkinci API Gerekliliği
-- Req25: bank_id tipinin string'e dönüştürülme talebi
 ---
 
 #### 🔹 **Req1: Ortam Sunucularının Eklenmesi**
@@ -57,7 +57,9 @@
 ```   
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** PROD, QA ortamları aşağıdaki gibi eklenmeli. Oluşturulacak olan domainler bekleniyor.
+- **Açıklama:**
+  - (15.07.2025) PROD, QA ortamları aşağıdaki gibi eklenmeli. Oluşturulacak olan domainler bekleniyor.
+  - (01.08.2025) gallus-mms tarafından outdate olarak işaretlendi ancak TR-Gateway spec'inde de aynı konu var. Orada gerekli yorumlar yapıldı. Netleştiğinde her iki apideDe domain'ler standartlara göre güncellenecektir.
 
 - **Önerilen Güncel Hâli:**
 
@@ -112,7 +114,7 @@ EN:
   Enhance descriptions for all properties (ID in which system; is it unique; maybe also examples) → for both endpoints (refund and payment)
 (15.07.2025 - 09:30) Mehmet Gülenç:
   We’ll enhance the descriptions as part of future improvements.
-(17.07.2025 - 16:56)
+(17.07.2025 - 16:56) gallus-mms:
   We're currently in the review process of a new API. It would be good to have detailed descriptions right now because we're using the API from now on and not sometime in future.
 ```
 ```
@@ -121,13 +123,15 @@ TR:
  Tüm özellikler için açıklamaları geliştirin (hangi sistemde ID; benzersiz mi; belki örnekler de) → her iki endpoint için de (refund ve payment)
 (15.07.2025 - 09:30) Mehmet Gülenç:
  Açıklamaları gelecekteki iyileştirmelerin bir parçası olarak geliştireceğiz.
-(17.07.2025 - 16:56)
+(17.07.2025 - 16:56) gallus-mms:
  Şu anda yeni bir API'nin inceleme sürecindeyiz. API'yi gelecekte bir zaman değil, şu andan itibaren kullandığımız için şu anda detaylı açıklamalara sahip olmak iyi olurdu.
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Açıklamaların detaylandırılması için Ömer abi ile toplantı yapılıp beraber her bir parametre için detaylı açıklama çıkarılacaktır.
+- **Açıklama:**
+  - (31.07.2025) Açıklamaların detaylandırılması için Ömer abi ile toplantı yapılıp beraber her bir parametre için detaylı açıklama çıkarılacaktır.
+  - (01.08.2025) Ömer abi iki api spec'ini de talep etti. Gönderilip tüm descriptionlar'ı doldurması beklenecek.
 
 ---
 
@@ -517,6 +521,7 @@ PaymentListResponse:
 
 - **Yorum:**
 ```
+EN:
 (14.07.2025 - 18:16) wambobambo:
   Not sure if this object is still needed, since error handling is by httpStatus and own error model. paymentListData could be used directly. Duplicating the httpStatus here doesn't make sense.
 (15.07.2025 - 01:43) Mehmet Gülenç:
@@ -531,6 +536,22 @@ PaymentListResponse:
   For now, we’d prefer to keep it as it is
 (30.07.2025 - 09:22) Florian Heubeck:
   changes most likely would introduce breaking changes. please comply to the api guide and introduce proper error response right from the beginning.
+
+TR:
+(14.07.2025 - 18:16) wambobambo:
+Bu nesnenin hala gerekli olup olmadığından emin değilim, çünkü hata işleme httpStatus ve kendi hata modeli ile yapılıyor. paymentListData doğrudan kullanılabilir. httpStatus'u burada tekrarlamak mantıklı gelmiyor.
+(15.07.2025 - 01:43) Mehmet Gülenç:
+Bu şekilde tutmamız herhangi bir soruna neden olur mu?
+(15.07.2025 - 09:12) wambobambo:
+Yapıyı daha okunabilir hale getirir ve eğer gerekli değilse... sadece gereksiz kod üretir.
+(15.07.2025 - 09:27) Mehmet Gülenç:
+İlk aşamada, iş akışını engellemediği için bu şekilde tutmayı tercih ediyoruz. Gelecekteki ihtiyaçlara bağlı olarak statusCode alanına iş seviyesinde kodlar eklenebileceğinden daha sonra tekrar gözden geçirip tartışabiliriz.
+(15.07.2025 - 12:23) wambobambo:
+Gerçekten değiştirmek bu kadar zor mu? kod bir tekrar ve PaymentListResponse döndürmek yerine PaymentListData döndürüyorsun, her neyse şimdi değiştirmek çok fazla sorun yaratıyorsa, böyle tut.
+(16.07.2025 - 14:35) Mehmet Gülenç:
+Şimdilik olduğu gibi tutmayı tercih ederiz
+(30.07.2025 - 09:22) Florian Heubeck:
+değişiklikler büyük ihtimalle breaking change'lere neden olur. lütfen API kılavuzuna uyun ve baştan doğru hata response'u tanıtın.
   ```
 
 - **Durum:** **Bekliyor**
@@ -538,7 +559,7 @@ PaymentListResponse:
 - **Açıklama:**
   - (16.07.2025 - 14:35) `httpStatus` ve `data` modelinin ayrıştırılması ileride tekrar değerlendirilecek. Şu anda iş akışını engellemediği için mevcut yapı korunuyor.
   - (30.07.2025 - 09:23) Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
-
+  - (01.08.2025) - Ömer abi ile konuşuldu, Mehmet Alagöz ile beraber değerlendirilip gerekli düzenlemeler yapılacak
 ---
 
 #### 🔹 **Req20: HTTP status code tekrarının anlamlılığı**
@@ -546,12 +567,21 @@ PaymentListResponse:
 
 - **Yorum:**
 ```
+EN:
 (14.07.2025 - 10:58) pfaefflin-mms:
   just repeating the http error code is not really helpful
 (15.07.2025 - 01:31) Mehmet Gülenç:
   This field is not limited to HTTP status codes — it may also include error codes returned from Craftgate or business-level validations. For now, it only returns the HTTP status code.
 (30.07.2025 - 09:23) Florian Heubeck:
   please name it differently then and describe it properly.
+
+TR:
+(14.07.2025 - 10:58) pfaefflin-mms:
+http hata kodunu tekrarlamak gerçekten yardımcı olmuyor
+(15.07.2025 - 01:31) Mehmet Gülenç:
+Bu alan HTTP durum kodlarıyla sınırlı değil — Craftgate'den dönen hata kodlarını veya iş seviyesindeki doğrulamaları da içerebilir. Şu an için sadece HTTP durum kodunu döndürüyor.
+(30.07.2025 - 09:23) Florian Heubeck:
+o zaman lütfen farklı bir şekilde adlandırın ve düzgün bir şekilde açıklayın.
 ```
 
 - **Durum:** **Bekliyor**
@@ -559,7 +589,7 @@ PaymentListResponse:
 - **Açıklama:**
   - (15.07.2025 - 01:31) Şu an yalnızca HTTP status dönüyor; ileride iş seviyesinde hata kodlarının da buraya eklenmesi planlanabilir.
   - (30.07.2025 - 09:23) Florian Heubeck'in son comment'i üzerine tekrar değerlendirilecek.
-  - 
+  - (01.08.2025) - Ömer abi ile konuşuldu, Mehmet Alagöz ile beraber değerlendirilip gerekli düzenlemeler yapılacak
 ---
 
 #### 🔹 **Req21: PaymentProvider yalnızca ZIP mi olacak?**
@@ -650,13 +680,25 @@ and not type: apiKey
 
 - **Yorum:**
 ```
+EN:
 (28.07.2025 - 16:45) Tung Beier:
   do we really need a second api for reporting or can these reporting paths also be added to the other api spec?
+(01.08.2025 - 08:56) Mehmet Gülenç:
+  A second API is not mandatory, however the gateway API contains general processes used and operated by DMC. The TR-Gateway API is not directly connected to the provider. The Provider project is used for reporting and contains direct Online Payment Provider integration. We created two separate projects to better manage the process.
+
+TR:
+(28.07.2025 - 16:45) Tung Beier:
+raporlama için gerçekten ikinci bir API'ye ihtiyacımız var mı yoksa bu raporlama yolları diğer API spec'ine de eklenebilir mi?
+(01.08.2025 - 08:56) Mehmet Gülenç:
+İkinci API gerekliliği şart değil ancak gateway API'si genel olarak DMC tarafından kullanılan ve işlem yapan süreçleri içermektedir. TR-Gateway API'si direkt olarak provider ile bağı bulunmamaktadır. Provider projesi ise raporlama için kullanılmakta ve direkt Online Payment Provider entegrasyonu içermektedir. Süreci daha iyi yönetebilmek adına iki ayrı proje açtık.
+
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Reporting endpoint'lerinin ayrı bir API olarak mı yoksa mevcut API spec'e eklenmiş olarak mı tutulacağına dair Ömer abi'den karar bekleniyor.
+- **Açıklama:**
+  - (31.07.2025) Reporting endpoint'lerinin ayrı bir API olarak mı yoksa mevcut API spec'e eklenmiş olarak mı tutulacağına dair Ömer abi'den karar bekleniyor.
+  - (01.08.2025) Ömer abi ile konuşuldu ve yorum yapıldı. Şu an istek gelmediği sürece comment çözüldü olarak işaretlendi.
 
 ---
 
@@ -667,10 +709,14 @@ and not type: apiKey
 ```
 (30.07.2025 - 09:19) Florian Heubeck:
   string
+(01.08.2025 - 09:00) Mehmet Gülenç:
+  We will update it as string.
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (31.07.2025) Ömer abi'ye sorulacak.
+  - (01.08.2025) Soruldu. String olarak düzenlenecek.
 
 ---
