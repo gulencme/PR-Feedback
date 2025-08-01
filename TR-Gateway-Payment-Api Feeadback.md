@@ -1,37 +1,38 @@
 ## Gateway Payment Api Project Pull Request Feedback Summary
 
-**📅 Son Güncelleme:** 31 Temmuz 2025 - 15:35
+**📅 Son Güncelleme:** 01 Ağustos 2025 - 09:48
 
 ## 📊 Durum Özeti
 
 | **Durum** | **Sayı** |
 |-----------|----------|
-| ✅ **Çözüldü** | 5 |
-| ⏳ **Bekliyor** | 13 |
+| ✅ **Çözüldü** | 11 |
+| ⏳ **Bekliyor** | 7 |
 | **📝 Toplam** | **18** |
 
 ---
 
-### Çözülen Konular (5):
+### Çözülen Konular (11):
 - Req1: X-Api-Key Zorunluluğu
 - Req2: LineItemId Format Değişikliği  
 - Req3: Quantity Minimum Değeri
 - Req4: Unit Price Money Object Kullanımı
-- Req17: RefundResultModel altında status enum
-
-### Bekleyen Konular (13):
-- Req5: Model Suffix Kaldırılması
 - Req6: Customer ID Sistem Açıklaması
-- Req8: Error Data Type Belirlenmesi
+- Req7: Postal Code Zorunluluğu
 - Req9: FulfillmentMethod Enum Değerleri
-- Req10: Detaylı Proje Açıklaması
-- Req11: Versiyonlama Server URL'de
 - Req12: Product ID Açıklaması
-- Req13: Product Group ID Tip Değişikliği
 - Req14: Payment ID String Yapılması
 - Req15: Yabancı Para Birimi
-- Req16: ItemType Adlandırma Değişikliği
+- Req17: RefundResultModel altında status enum
 - Req18: SellerType Enum Değişikliği
+
+### Bekleyen Konular (7):
+- Req5: Model Suffix Kaldırılması
+- Req8: Error Data Type Belirlenmesi
+- Req10: Detaylı Proje Açıklaması
+- Req11: Versiyonlama Server URL'de
+- Req13: Product Group ID Tip Değişikliği
+- Req16: ItemType Adlandırma Değişikliği
   
 ---
 
@@ -206,7 +207,9 @@ CreateRefundRequestModel:
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Model isimlerindeki "Model" suffix'inin kaldırılması konusunda Mehmet abi ile tartışılıp, karar verilecek.
+- **Açıklama:**
+  - (29.07.2025) Model isimlerindeki "Model" suffix'inin kaldırılması konusunda Mehmet abi ile tartışılıp, karar verilecek.
+  - (31.07.2025) Ömer abi ile konuşuldu. PR linki verildi. Direkt kendisinin yorum yapması bekleniyor.
 
 ---
 
@@ -250,11 +253,22 @@ CustomerInfo:
 (30.07.2025 - 09:10) Florian Heubeck:
   EN: if's that what I think it should be, please call it party_id for clarity.
   TR: eğer düşündüğüm buysa, açıklık sağlamak için lütfen buna party_id diyelim.
+(01.08.2025 - 07:51) Mehmet Gülenç:
+  EN: It has been handled as it is used and named in the customer order service v3 (COS V3) systems. This value is the customer's identity ID in COS. It is not the party_id value.
+  TR: customer order service v3 (COS V3) sistemlerinde kullanıldığı ve adlandırıldığı gibi ele alınmıştır. Bu değer COS'da müşterinin kimlik id'sidir. Party_id değeri değildir.
+(01.08.2025 - 07:54) Tung Beier:
+  EN: please add this info to its description then
+  TR: lütfen bu bilgiyi açıklamasına ekleyin
+(01.08.2025 - 08:02) Mehmet Gülenç:
+  EN: Yes, you're right. The descriptions are currently insufficient. We have started working to review and update all descriptions.
+  TR: Evet haklısınız. Şu an açıklamalar yetersiz. Tüm descriptionları gözden geçirip güncellemek için çalışma başlattık.
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Customer ID'nin hangi sistemde olduğuna dair Ömer abi'den cevap bekleniyor.
+- **Açıklama:**
+  - (30.07.2025) Customer ID'nin hangi sistemde olduğuna dair Ömer abi'den cevap bekleniyor.
+  - (01.08.2025) Açıklama yapıldı.
 
 ---
 
@@ -352,11 +366,11 @@ The data field should remain generic to maintain flexibility for different error
   This value is already defined this way in XPAY and other systems
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** FulfillmentMethod enum değerlerinin tam olarak yazılması Thomas Pfaefflin'a soruldu. Cevap bekleniyor.
-- **Cevap olarak:** SDD_EXPRESS kaldırılması ve sadece SAME_DAY_DELIVERY şeklinde devam edilmesi istendi.
-
+- **Açıklama:**
+  - FulfillmentMethod enum değerlerinin tam olarak yazılması Thomas Pfaefflin'a soruldu. Cevap bekleniyor.
+  - Thomas Pfaefflin "SDD_EXPRESS" kaldırılması ve sadece "SAME_DAY_DELIVERY" şeklinde devam edilmesi istendi.
 ---
 
 #### 🔹 **Req10: Detaylı Proje Açıklaması**
@@ -371,7 +385,7 @@ The data field should remain generic to maintain flexibility for different error
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Ömer abi'den daha detaylı açıklama alınacak.
+- **Açıklama:** Ömer abi'ye iki projenin spec'i gönderilip tüm parametreler için detaylı açıklama girmesi istenecek.
 
 ---
 
@@ -393,13 +407,18 @@ paths:
 Suggested change:
   paths:
     /refunds:
+
+(01.08.2025 - 08:45) Mehmet Gülenç:
+  Just to confirm - if we move the version to the server URL as suggested, we would lose our endpoint-level versioning flexibility. Is this the intended approach you'd prefer?
 ```
 
 - **Etkileri:** Endpoint bazlı versiyonlama özelliği uygulamalarda kaldırılmış olacak.
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** İncelendi. Ömer abi'den son yorum alınacak.
+- **Açıklama:**
+  - (30.07.2025) İncelendi. Ömer abi'den son yorum alınacak.
+  - (01.08.2025) Florian Heubeck'den onay bekleniyor.
 
 ---
 
@@ -417,11 +436,15 @@ product_id:
 (30.07.2025 - 09:03) Florian Heubeck:
   EN: MDNG id? global product id?
   TR: "MDNG id? global ürün id'si?"
+(01.08.2025 - 08:22) Mehmet Gülenç:
+  It is the (MDNG) ID
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (30.07.2025) Ömer abi'ye sorulacak.
+  - (01.08.2025) Açıklama yapıldı.
 
 ---
 
@@ -443,11 +466,16 @@ product_group_id:
 (30.07.2025 - 09:04) Florian Heubeck:
   EN: product group id is an identifier, please use string
   TR: ürün grubu kimliği bir tanımlayıcıdır, lütfen dize kullanın
+(01.08.2025 - 08:23) Mehmet Gülenç:
+  EN: The "https://api.mediamarktsaturn.com/v2/sales-products" service accepts the product_group_id parameter as int. We use this service to retrieve the product_group_id values of products. We manage the installment options we offer to our customers based on the product_group_id information. The sales-products v2 service sends int for product_group_id. To maintain consistency, this value should also be int in the service we provide to you
+  TR: "https://api.mediamarktsaturn.com/v2/sales-products" servisi product_group_id parametresini int olarak alıyor. Bu servisi kullanarak ürünlerin product_group_id'lerini alıyoruz. product_group_id bilgisi ile müşterilerimize sunacağımız taksit seçeneklerini yönetiyoruz. sales-products v2 servisi product_group_id için int gönderiyor. Bütünlüğünü sağlamak için bu değerin size verdiğimiz serviste de int olması gerekmektedir.
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (30.07.2025) Ömer abi'ye sorulacak.
+  - (01.08.2025) Açıklama yapıldı. Son yorum Florian Heubeck'den bekleniyor.
 
 ---
 
@@ -466,11 +494,16 @@ payment_id:
 ```
 (30.07.2025 - 09:06) Florian Heubeck:
   https://github.com/MediaMarktSaturn/oas/tree/master/api-design-guide#oas-09-business-object-identifiers
+(01.08.2025 - 08:29) Mehmet Gülenç:
+  EN: We don't generate this value. Since the integrator's own value is of type int, we need to maintain the "payment_id" parameter as int type on our side as well to ensure consistency
+  TR: Bu değeri biz oluşturmuyoruz. Entegratörün kendi değeri int tipinde olduğundan dolayı, tutarlılığı sağlamak için "payment_id" parametresinin tipini bizim tarafımızda da int olarak tutmamız gerekmektedir.
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Gerekliliği Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (30.07.2025) Gerekliliği Ömer abi'ye sorulacak.
+  - (01.08.2025) Soruldu ve yorum yapıldı.
 
 ---
 
@@ -492,11 +525,15 @@ Currency:
 ```
 (30.07.2025 - 09:10) Florian Heubeck:
   no foreign currency payments?
+(01.08.2025 - 08:01) Mehmet Gülenç:
+  No, only support TRY.
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Hayır şimdilik olmayacak ama uzun vadede olup olmayacağı Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (31.07.2025) Hayır şimdilik olmayacak ama uzun vadede olup olmayacağı Ömer abi'ye sorulacak.
+  - (01.07.2025) Soruldu. Uzun vade de olmayacak.
 
 ---
 
@@ -518,11 +555,27 @@ ItemType:
 (30.07.2025 - 09:16) Florian Heubeck:
   EN: who's deciding for those? would prefer to have kind_of_product.
   TR: Bunlara kim karar veriyor? kind_of_product olmasını tercih ederdim.
+(01.08.2025 - 07:57) Mehmet Gülenç:
+  EN: We decided on ItemType because it represents the product type for us. Unfortunately, we cannot change it to kind_of_product. Because kind_of_product has a different meaning in COS V3 and this project has a different reporting branch, so it would create confusion with different meanings.
+In COS V3, it is as follows:
+kind_of_product:
+  type: string
+  description: An MMS internal classification of product, provided by ProductAPI.
+  example: 'MEAT_GRINDER'
+  TR: ItemType kullanmaya karar verdik çünkü bizim için ürün tipini temsil ediyor. Maalesef kind_of_product olarak değiştiremeyiz. Çünkü kind_of_product COS V3'te farklı bir anlama sahip ve bu projenin farklı bir raporlama dalı var, bu nedenle farklı anlamlarla karışıklık yaratacaktır.
+COS V3'te şu şekildedir:
+kind_of_product:
+  type: string
+  description: An MMS internal classification of product, provided by ProductAPI.
+  example: 'MEAT_GRINDER'
+
 ```
 
 - **Durum:** **Bekliyor**
 
-- **Açıklama:** Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (31.07.2025) Ömer abi'ye sorulacak.
+  - (01.08.2025) Soruldu ve yorum yapıldı. Florian Heubeck'den dönüş bekleniyor.
 
 ---
 
@@ -546,6 +599,8 @@ RefundResultModel:
 ```
 (30.07.2025 - 09:17) Florian Heubeck:
   enumeration?
+(01.08.2025 - 07:53) Mehmet Gülenç:
+  We will organize it as an enum
 ```
 
 - **Durum:** **Çöüzldü**
@@ -570,10 +625,14 @@ SellerType:
 ```
 (30.07.2025 - 09:17) Florian Heubeck:
   MIX_BASKET -> MIXED_BASKET
+(01.08.2025 - 07:59) Mehmet Gülenç:
+  The MIX_BASKET value will be changed to MIXED_BASKET.
 ```
 
-- **Durum:** **Bekliyor**
+- **Durum:** **Çözüldü**
 
-- **Açıklama:** Ömer abi'ye sorulacak.
+- **Açıklama:**
+  - (31.07.2025) Ömer abi'ye sorulacak.
+  - (01.08.2025) Soruldu, MIXED_BASKET olarak değiştirilecek.
 
 ---
