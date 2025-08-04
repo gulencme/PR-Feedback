@@ -1,23 +1,22 @@
 ## Gateway Payment Api Project Pull Request Feedback Summary
 
-**📅 Son Güncelleme:** 01 Ağustos 2025 - 11:48
+**📅 Son Güncelleme:** 04 Ağustos 2025 - 08:45
 
 ## 📊 Durum Özeti
 
 | **Durum** | **Sayı** |
 |-----------|----------|
-| ✅ **Çözüldü** | 10 |
-| ⏳ **Bekliyor** | 8 |
+| ✅ **Çözüldü** | 9 |
+| ⏳ **Bekliyor** | 9 |
 | **📝 Toplam** | **18** |
 
 ---
 
-### Çözülen Konular (10):
+### Çözülen Konular (9):
 - Req1: X-Api-Key Zorunluluğu
 - Req2: LineItemId Format Değişikliği  
 - Req3: Quantity Minimum Değeri
 - Req4: Unit Price Money Object Kullanımı
-- Req6: Customer ID Sistem Açıklaması
 - Req7: Postal Code Zorunluluğu
 - Req9: FulfillmentMethod Enum Değerleri
 - Req12: Product ID Açıklaması
@@ -25,8 +24,9 @@
 - Req17: RefundResultModel altında status enum
 - Req18: SellerType Enum Değişikliği
 
-### Bekleyen Konular (8):
+### Bekleyen Konular (9):
 - Req5: Model Suffix Kaldırılması
+- Req6: Customer ID Sistem Açıklaması
 - Req8: Error Data Type Belirlenmesi
 - Req10: Detaylı Proje Açıklaması
 - Req11: Versiyonlama Server URL'de
@@ -262,14 +262,17 @@ CustomerInfo:
 (01.08.2025 - 08:02) Mehmet Gülenç:
   EN: Yes, you're right. The descriptions are currently insufficient. We have started working to review and update all descriptions.
   TR: Evet haklısınız. Şu an açıklamalar yetersiz. Tüm descriptionları gözden geçirip güncellemek için çalışma başlattık.
+(01.08.2025 - 10:34) Florian Heubeck:
+  EN: no, please change it to the party_id - that's the leading customer identifier.
+  TR: hayır, lütfen bunu party_id olarak değiştirin - bu önde gelen müşteri tanımlayıcısıdır.
 ```
 
-- **Durum:** **Çözüldü**
+- **Durum:** **Bekliyor**
 
 - **Açıklama:**
   - (30.07.2025) Customer ID'nin hangi sistemde olduğuna dair Ömer abi'den cevap bekleniyor.
   - (01.08.2025) Açıklama yapıldı.
-
+  - (04.08.2025 - 08:44) Florian'ın son yorumuna göre madde tekrardan açıldı ve Ömer abi'den cevap bekleniyor.
 ---
 
 #### 🔹 **Req7: Postal Code Zorunluluğu**
